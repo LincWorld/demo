@@ -101,6 +101,25 @@ html {
         width: 326px;
         display: block;
         margin: 24px auto; }
+      html body article section.left > .container > div {
+        display: none; }
+        html body article section.left > .container > div.state-1 .img {
+          width: 30%;
+          float: left;
+          padding: 10px; }
+          html body article section.left > .container > div.state-1 .img img {
+            display: block;
+            width: 100%; }
+          html body article section.left > .container > div.state-1 .img p {
+            color: #43b9dd;
+            font-size: 2em; }
+            html body article section.left > .container > div.state-1 .img p sup,
+            html body article section.left > .container > div.state-1 .img p span {
+              font-size: 75%; }
+        html body article section.left > .container > div.state-1 button {
+          width: 60%; }
+        html body article section.left > .container > div.state-1 p.center {
+          text-align: center; }
       html body article section.inactive {
         cursor: none;
         pointer-events: none;

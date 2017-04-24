@@ -23,7 +23,22 @@
     <article>
         <section class="left inactive">
             
-<p>Left</p>
+<div>
+    <p>My Energy Use</p>
+</div>
+<div class="container">
+    <div class="state-1" style="display:block">
+        <img src="assets/images/left-state1-15.svg" />
+        <button>Commander le connecteur</button>
+        <p class="center">Revenir à la communauté</p>
+    </div>
+    <div class="state-2"></div>
+    <div class="state-3"></div>
+</div>
+<div>
+    <img src="assets/images/left-bottom.svg" width="95%" />
+</div>
+
         </section>
         <section class="right inactive">
             
@@ -163,6 +178,7 @@
 
         $("article section.right .img button").click(function(e) {
             e.preventDefault();
+            $(this).attr("disabled", "disabled");
             $("article section.left").removeClass("inactive");
         });
     });
