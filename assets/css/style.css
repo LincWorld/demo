@@ -101,52 +101,65 @@ html {
         width: 326px;
         display: block;
         margin: 24px auto; }
-      html body article section.left > .container > div {
-        display: none; }
-        html body article section.left > .container > div.state-1 .img {
-          width: 30%;
-          float: left;
-          padding: 10px; }
-          html body article section.left > .container > div.state-1 .img img {
+      html body article section.left > .container {
+        min-height: 400px; }
+        html body article section.left > .container > div {
+          display: none; }
+          html body article section.left > .container > div.state-1 .img {
+            width: 30%;
+            float: left;
+            padding: 10px; }
+            html body article section.left > .container > div.state-1 .img img {
+              display: block;
+              width: 100%; }
+            html body article section.left > .container > div.state-1 .img p {
+              color: #43b9dd;
+              font-size: 2em; }
+              html body article section.left > .container > div.state-1 .img p sup,
+              html body article section.left > .container > div.state-1 .img p span {
+                font-size: 75%; }
+          html body article section.left > .container > div.state-1 button {
+            margin: 24px auto 10px auto;
+            width: 60%; }
+          html body article section.left > .container > div.state-1 p.center {
+            text-align: center; }
+          html body article section.left > .container > div.state-2 img.card {
+            width: 40%;
+            margin: 5px;
+            border-radius: 5px; }
+          html body article section.left > .container > div.state-2 form {
+            float: right;
+            width: 50%;
+            margin: 5px; }
+            html body article section.left > .container > div.state-2 form input {
+              border-width: 0 0 thin 0;
+              line-height: 3em;
+              width: 98%;
+              outline: none;
+              font-size: 1em; }
+              html body article section.left > .container > div.state-2 form input.date {
+                width: 57%; }
+              html body article section.left > .container > div.state-2 form input.cvc {
+                width: 40%; }
+              html body article section.left > .container > div.state-2 form input:first-child {
+                background: url("../images/visa.png");
+                background-size: contain;
+                background-position: right center;
+                background-repeat: no-repeat; }
+          html body article section.left > .container > div.state-2 p.center {
+            text-align: center; }
+          html body article section.left > .container > div.state-2 button {
+            margin: 24px auto 10px auto;
+            width: 60%; }
+          html body article section.left > .container > div.state-3 img {
             display: block;
-            width: 100%; }
-          html body article section.left > .container > div.state-1 .img p {
-            color: #43b9dd;
-            font-size: 2em; }
-            html body article section.left > .container > div.state-1 .img p sup,
-            html body article section.left > .container > div.state-1 .img p span {
-              font-size: 75%; }
-        html body article section.left > .container > div.state-1 button {
-          width: 60%; }
-        html body article section.left > .container > div.state-1 p.center {
-          text-align: center; }
-        html body article section.left > .container > div.state-2 img.card {
-          width: 40%;
-          margin: 5px;
-          border-radius: 5px; }
-        html body article section.left > .container > div.state-2 form {
-          float: right;
-          width: 50%;
-          margin: 5px; }
-          html body article section.left > .container > div.state-2 form input {
-            border-width: 0 0 thin 0;
-            line-height: 3em;
-            width: 98%;
-            outline: none;
-            font-size: 1em; }
-            html body article section.left > .container > div.state-2 form input.date {
-              width: 57%; }
-            html body article section.left > .container > div.state-2 form input.cvc {
-              width: 40%; }
-            html body article section.left > .container > div.state-2 form input:first-child {
-              background: url("../images/visa.png");
-              background-size: contain;
-              background-position: right center;
-              background-repeat: no-repeat; }
-        html body article section.left > .container > div.state-2 p.center {
-          text-align: center; }
-        html body article section.left > .container > div.state-2 button {
-          width: 60%; }
+            width: 56%;
+            margin: auto; }
+          html body article section.left > .container > div.state-3 p.center {
+            text-align: center; }
+          html body article section.left > .container > div.state-3 button {
+            margin: 24px auto 10px auto;
+            width: 60%; }
       html body article section.inactive {
         cursor: none;
         pointer-events: none;

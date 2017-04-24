@@ -44,7 +44,11 @@
         <button>Payer pour commander</button>
         <p class="center">Annuler</p>
     </div>
-    <div class="state-3"></div>
+    <div class="state-3">
+        <img src="assets/images/left-state3.svg" />
+        <button>Aller à mon tableau de bord</button>
+        <p class="center">Fermer</p>
+    </div>
 </div>
 <div>
     <img src="assets/images/left-bottom.svg" width="95%" />
@@ -186,19 +190,24 @@
             $("article section.right .img button").show();
         });
 
-
         $("article section.right .img button").click(function(e) {
             e.preventDefault();
             $(this).attr("disabled", "disabled");
             $("article section.left").removeClass("inactive");
         });
 
-
         $("article section.left .container .state-1 button").click(function(e) {
             e.preventDefault();
             $(this).attr("disabled", "disabled");
             $("article section.left .container .state-1").hide();
             $("article section.left .container .state-2").show();
+        });
+
+        $("article section.left .container .state-2 button").click(function(e) {
+            e.preventDefault();
+            $(this).attr("disabled", "disabled");
+            $("article section.left .container .state-2").hide();
+            $("article section.left .container .state-3").show();
         });
     });
 
