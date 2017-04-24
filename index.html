@@ -39,7 +39,7 @@
 <script type="text/javascript">
     $(document).ready(function() {
         if (window.location.hash.length > 1) {
-            $("aside h2 span").text(window.location.hash.substr(1));
+            $("aside h2 span").text(decodeURI(window.location.hash.substr(1)));
         }
     });
 
