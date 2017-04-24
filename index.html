@@ -156,8 +156,14 @@
             });
             kmlLayer.addListener('click', function(event) {
                 console.log(event);
-                $("article section.right .img button").show();
             });
+            $("article section.right .img button").show();
+        });
+
+
+        $("article section.right .img button").click(function(e) {
+            e.preventDefault();
+            $("article section.left").removeClass("inactive");
         });
     });
 
