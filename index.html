@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="assets/css/normalize.css" media="screen" />
     <link type="text/css" rel="stylesheet" href="assets/css/style.css" media="screen" /> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -24,7 +25,8 @@
     </article>
     <aside>
         
-<h2>Bonjour <span>ss</span></h2><p>Welcome to your Linc dashboard.</p>
+<h2>Bonjour <span></span></h2>
+<p>Welcome to your Linc dashboard.</p>
 <ul>
     <li>Create Linc profile</li>
     <li>Connect to community</li>
@@ -33,6 +35,15 @@
 <div><button>Continue</button></div>
 
     </aside>
-</body>
+    
+<script type="text/javascript">
+    $(document).ready(function() {
+        if (window.location.hash.length > 1) {
+            $("aside h2 span").text(window.location.hash.substr(1));
+        }
+    });
 
+</script>
+
+</body>
 </html>
