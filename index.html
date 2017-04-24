@@ -30,10 +30,14 @@
 <div>
     <p>My EDF Energy Community<img src="assets/images/edf-logo.png" style="height: 48px;    float: right;    margin-top: -0.75em;" /></p>
 </div>
-<div>
-    <p><input type="number" name="pin" placeholder="Enter ZIP Code" /><button>Find my community</button> </p>
+<div class="head">
+    <p><input type="number" name="pin" placeholder="Enter ZIP Code" /><button class="fmc">Find my community</button> </p>
 </div>
 <div id="map"></div>
+<div class="img">
+    <button style="display:none">Continue</button>
+    <img src="assets/images/section-right.png" />
+</div>
         </section>
     </article>
     <aside>
@@ -133,13 +137,27 @@
             $("aside .state-4 ul li:first").text($("aside .state-2 ul li:first").text());
         });
 
-
         $("aside .state-2 button,aside .state-3 button").click(function(e) {
             e.preventDefault();
             $("aside .state-2").hide();
             $("aside .state-3").hide();
             $("aside .state-4").show();
             $("article section.right").removeClass("inactive");
+        });
+
+        $("article section.right button.fmc").click(function(e) {
+            e.preventDefault();
+            $(this).attr("disabled", "disabled");
+            var src = "https://www.google.com/maps/d/kml?mid=1qRz8HYh3eU1zCzvbIlT6Pg5d1SU&cid=mp&cv=IA-YQgxTvq0.en.";
+            var kmlLayer = new google.maps.KmlLayer(src, {
+                suppressInfoWindows: true,
+                preserveViewport: false,
+                map: map
+            });
+            kmlLayer.addListener('click', function(event) {
+                console.log(event);
+                $("article section.right .img button").show();
+            });
         });
     });
 
@@ -148,7 +166,6 @@
 <script type="text/javascript">
     // When the window has finished loading create our google map below
     google.maps.event.addDomListener(window, 'load', init);
-    var src = "https://www.google.com/maps/d/kml?mid=1qRz8HYh3eU1zCzvbIlT6Pg5d1SU&cid=mp&cv=IA-YQgxTvq0.en.";
 
     function init() {
         // Basic options for a simple Google Map
@@ -178,7 +195,13 @@
                         "visibility": "off"
                     }]
                 }
-            ]
+            ],
+            center: {
+                lat: 48.8566,
+                lng: 2.3522
+            },
+            zoom: 8
+
         };
 
         // Get the HTML DOM element that will contain your map 
@@ -186,19 +209,7 @@
         var mapElement = document.getElementById('map');
 
         // Create the Google Map using our element and options defined above
-        map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
-        var kmlLayer = new google.maps.KmlLayer(src, {
-            suppressInfoWindows: true,
-            preserveViewport: false,
-            map: map
-        });
-        kmlLayer.addListener('click', function(event) {
-            var content = event.featureData.infoWindowHtml;
-            var testimonial = document.getElementById('capture');
-            testimonial.innerHTML = content;
-        });
-
+        window.map = new google.maps.Map(document.getElementById('map'), mapOptions);
     }
 
 </script>
