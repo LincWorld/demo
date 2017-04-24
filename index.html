@@ -6,7 +6,7 @@
     <meta content="" name="description">
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport"> 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="assets/css/normalize.css" media="screen" />
     <link type="text/css" rel="stylesheet" href="assets/css/style.css" media="screen" /> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -21,11 +21,18 @@
         </nav>
     </header>
     <article>
-        <section>
-            Left
-        </section>
-        <section>
+        <section class="left inactive">
             
+<p>Left</p>
+        </section>
+        <section class="right inactive">
+            
+<div>
+    <p>My EDF Energy Community<img src="assets/images/edf-logo.png" style="height: 48px;    float: right;    margin-top: -0.75em;" /></p>
+</div>
+<div>
+    <p><input type="number" name="pin" placeholder="Enter ZIP Code" /><button>Find my community</button> </p>
+</div>
 <div id="map"></div>
         </section>
     </article>
@@ -132,6 +139,7 @@
             $("aside .state-2").hide();
             $("aside .state-3").hide();
             $("aside .state-4").show();
+            $("article section.right").removeClass("inactive");
         });
     });
 
