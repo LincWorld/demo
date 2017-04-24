@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <title>{{ meta.title }} | {{ config.siteTitle }}</title>
+    <meta content="{{ meta.description }}" name="description">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"> {% block css %}
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="assets/css/normalize.css" media="screen" />
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css" media="screen" /> {% endblock %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="left"><a href="./" class="logo">Linc</a><a href="#">Feed</a><a href="#" class="active">Dashboard</a>
+        </nav>
+        <nav class="right">
+            <a href="#">Login / Signup</a>
+        </nav>
+    </header>
+    <article>
+        <section class="left inactive">
+            {% block sectionLeft %} {% endblock %}
+        </section>
+        <section class="right inactive">
+            {% block sectionRight %} {% endblock %}
+        </section>
+    </article>
+    <aside>
+        {% block sidebar %} {% endblock %}
+    </aside>
+    {% block js %} {% endblock %}
+</body>
+
+</html>
