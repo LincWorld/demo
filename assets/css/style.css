@@ -120,6 +120,33 @@ html {
           width: 60%; }
         html body article section.left > .container > div.state-1 p.center {
           text-align: center; }
+        html body article section.left > .container > div.state-2 img.card {
+          width: 40%;
+          margin: 5px;
+          border-radius: 5px; }
+        html body article section.left > .container > div.state-2 form {
+          float: right;
+          width: 50%;
+          margin: 5px; }
+          html body article section.left > .container > div.state-2 form input {
+            border-width: 0 0 thin 0;
+            line-height: 3em;
+            width: 98%;
+            outline: none;
+            font-size: 1em; }
+            html body article section.left > .container > div.state-2 form input.date {
+              width: 57%; }
+            html body article section.left > .container > div.state-2 form input.cvc {
+              width: 40%; }
+            html body article section.left > .container > div.state-2 form input:first-child {
+              background: url("../images/visa.png");
+              background-size: contain;
+              background-position: right center;
+              background-repeat: no-repeat; }
+        html body article section.left > .container > div.state-2 p.center {
+          text-align: center; }
+        html body article section.left > .container > div.state-2 button {
+          width: 60%; }
       html body article section.inactive {
         cursor: none;
         pointer-events: none;
