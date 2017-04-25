@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <title> | </title>
+    <meta content="" name="description">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"> 
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="assets/css/normalize.css" media="screen" />
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css" media="screen" /> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="left"><a href="./" class="logo">Linc</a><a href="#">Feed</a><a href="#" class="active">Dashboard</a>
+        </nav>
+        <nav class="right">
+            <a href="#">Login / Signup</a>
+        </nav>
+    </header>
+    <article>
+        <section class="left inactive">
+            
+<div>
+    <p>My Energy Use</p>
+</div>
+<div class="container">
+    <div class="state-1" style="display:block">
+        <img src="assets/images/left-state1-5.svg" />
+        <button>Commander le connecteur</button>
+        <p class="center">Revenir à la communauté</p>
+    </div>
+    <div class="state-2">
+        <img src="assets/images/left-state2-5.svg" />
+        <img src="assets/images/card.png" class="card" />
+        <form>
+            <input type="text" placeholder="Numéro de carte" />
+            <input type="text" placeholder="Nom Prénom" />
+            <input type="text" placeholder="Date d'expiration" class="date" />
+            <input type="number" placeholder="CVC" class="cvc" />
+        </form>
+        <button>Payer pour commander</button>
+        <p class="center">Annuler</p>
+    </div>
+    <div class="state-3">
+        <img src="assets/images/left-state3.svg" />
+        <button>Aller à mon tableau de bord</button>
+        <p class="center">Fermer</p>
+    </div>
+</div>
+<div>
+    <img src="assets/images/left-bottom.svg" width="95%" />
+</div>
+
+        </section>
+        <section class="right inactive">
+            
+<div>
+    <p>My EDF Energy Community<img src="assets/images/edf-logo.png" style="height: 48px;    float: right;    margin-top: -0.75em;" /></p>
+</div>
+<div class="head">
+    <p><input type="number" name="pin" placeholder="Enter ZIP Code" /><button class="fmc">Find my community</button> </p>
+</div>
+<div id="map"></div>
+<div class="img">
+    <img src="assets/images/section-right.png" />
+    <button style="display:none">Continue</button>
+</div>
+        </section>
+    </article>
+    <aside>
+        
+<div class="state-1" style="display:block">
+    <h2>Bonjour <span></span></h2>
+    <p>Welcome to your Linc dashboard. Let's get started.</p>
+    <ul>
+        <li>Create Linc profile</li>
+        <li>Connect to community</li>
+        <li>Set up metering</li>
+    </ul>
+    <div><button>Continue</button></div>
+</div>
+<div class="state-2">
+    <h2>Bonjour <span></span></h2>
+    <p>Welcome to your Linc dashboard. Let's get started.</p>
+    <ul>
+        <li class="active">Create Linc profile</li>
+        <li>Connect to community</li>
+        <li>Set up metering</li>
+    </ul>
+    <div>
+        <button class="fb">Sign in with Facebook</button>
+        <p class="center">Or</p>
+        <form>
+            <label for="firstname">First Name</label>
+            <input name="firstname" type="text" />
+            <label for="lastname">Surname</label>
+            <input name="lastname" type="text" />
+            <label for="email">Email</label>
+            <input name="email" type="email" />
+            <label for="password">Password</label>
+            <input name="password" type="password" />
+            <label for="cpassword">Confirm Password</label>
+            <input name="cpassword" type="password" />
+            <button>Sign up</button>
+        </form>
+        <p>Already have an account? <a href="#" class="login">Login</a></p>
+    </div>
+</div>
+<div class="state-3">
+    <h2>Bonjour <span></span></h2>
+    <p>Welcome to your Linc dashboard. Let's get started.</p>
+    <ul>
+        <li class="active">Login to Linc profile</li>
+        <li>Connect to community</li>
+        <li>Set up metering</li>
+    </ul>
+    <div>
+        <button class="fb">Sign in with Facebook</button>
+        <p class="center">Or</p>
+        <form>
+            <label for="email">Email</label>
+            <input name="email" type="email" />
+            <label for="password">Password</label>
+            <input name="password" type="password" />
+            <button>Login</button>
+        </form>
+        <p>Don't have an account? <a href="#" class="signup">Signup</a></p>
+    </div>
+</div>
+<div class="state-4">
+    <h2>Bonjour <span></span></h2>
+    <p>Welcome to your Linc dashboard. Let's get started.</p>
+    <ul>
+        <li>Create Linc profile</li>
+        <li class="active">Connect to community</li>
+        <li>Set up metering</li>
+    </ul>
+</div>
+
+    </aside>
+    
+<script type="text/javascript">
+    $(document).ready(function() {
+        if (window.location.hash.length > 1) {
+            $("aside h2 span").text(decodeURI(window.location.hash.substr(1)));
+        }
+        $("aside .state-1 button").click(function(e) {
+            e.preventDefault();
+            $("aside .state-1").hide();
+            $("aside .state-2").show();
+        });
+
+        $("aside .state-2 a.login").click(function(e) {
+            e.preventDefault();
+            $("aside .state-2").hide();
+            $("aside .state-3").show();
+            $("aside .state-4 ul li:first").text($("aside .state-3 ul li:first").text());
+        });
+
+        $("aside .state-3 a.signup").click(function(e) {
+            e.preventDefault();
+            $("aside .state-3").hide();
+            $("aside .state-2").show();
+            $("aside .state-4 ul li:first").text($("aside .state-2 ul li:first").text());
+        });
+
+        $("aside .state-2 button,aside .state-3 button").click(function(e) {
+            e.preventDefault();
+            $("header nav:last").html("<img src='assets/images/nav.png'/>");
+            $("aside .state-2").hide();
+            $("aside .state-3").hide();
+            $("aside .state-4").show();
+            $("article section.right").removeClass("inactive");
+        });
+
+        $("article section.right button.fmc").click(function(e) {
+            e.preventDefault();
+            $(this).attr("disabled", "disabled");
+            var src = "https://www.google.com/maps/d/kml?mid=1Z_gqkt7kz1IIZGWDa5QD2k7uKWw&nl=1&cid=mp&cv=IA-YQgxTvq0.en.";
+            var kmlLayer = new google.maps.KmlLayer(src, {
+                suppressInfoWindows: true,
+                preserveViewport: false,
+                map: map
+            });
+            kmlLayer.addListener('click', function(event) {
+                console.log(event);
+            });
+            $("article section.right .img button").show();
+        });
+
+        $("article section.right .img button").click(function(e) {
+            e.preventDefault();
+            $(this).attr("disabled", "disabled");
+            $("article section.left").removeClass("inactive");
+        });
+
+        $("article section.left .container .state-1 button").click(function(e) {
+            e.preventDefault();
+            $(this).attr("disabled", "disabled");
+            $("article section.left .container .state-1").hide();
+            $("article section.left .container .state-2").show();
+        });
+
+        $("article section.left .container .state-2 button").click(function(e) {
+            e.preventDefault();
+            $(this).attr("disabled", "disabled");
+            $("article section.left .container .state-2").hide();
+            $("article section.left .container .state-3").show();
+        });
+    });
+
+</script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFfBj9heMVV7niLbGq1iEE71P5lq_uNDE "></script>
+<script type="text/javascript">
+    // When the window has finished loading create our google map below
+    google.maps.event.addDomListener(window, 'load', init);
+
+    function init() {
+        // Basic options for a simple Google Map
+        // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+        var mapOptions = {
+
+            // How you would like to style the map. 
+            // This is where you would paste any style found on Snazzy Maps.
+            styles: [{
+                    "featureType": "road",
+                    "elementType": "labels",
+                    "stylers": [{
+                        "visibility": "off"
+                    }]
+                },
+                {
+                    "featureType": "poi",
+                    "elementType": "labels",
+                    "stylers": [{
+                        "visibility": "off"
+                    }]
+                },
+                {
+                    "featureType": "transit",
+                    "elementType": "labels.text",
+                    "stylers": [{
+                        "visibility": "off"
+                    }]
+                }
+            ],
+            center: {
+                lat: 48.8566,
+                lng: 2.3522
+            },
+            zoom: 8
+
+        };
+
+        // Get the HTML DOM element that will contain your map 
+        // We are using a div with id="map" seen below in the <body>
+        var mapElement = document.getElementById('map');
+
+        // Create the Google Map using our element and options defined above
+        window.map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    }
+
+</script>
+
+</body>
+
+</html>
