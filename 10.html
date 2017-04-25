@@ -194,6 +194,8 @@
         $("article section.right .img button").click(function(e) {
             e.preventDefault();
             $(this).attr("disabled", "disabled");
+             $("aside .state-4 ul li.active").removeClass("active");
+             $("aside .state-4 ul li:last").addClass("active");
             $("article section.left").removeClass("inactive");
         });
 
