@@ -68,6 +68,9 @@ html {
       float: left; }
     html body header nav.right {
       float: right; }
+      html body header nav.right img {
+        height: 32px;
+        vertical-align: middle; }
   html body article {
     margin: 66px 420px 0 0;
     padding: 10px;

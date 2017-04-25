@@ -169,6 +169,7 @@
 
         $("aside .state-2 button,aside .state-3 button").click(function(e) {
             e.preventDefault();
+            $("header nav:last").html("<img src='assets/images/nav.png'/>");
             $("aside .state-2").hide();
             $("aside .state-3").hide();
             $("aside .state-4").show();
